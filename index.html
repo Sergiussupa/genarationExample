@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.container4 {
+    height: 10em;
+    position: relative }
+div.container4 p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+    </style>
+</head>
+<body>
+
+    <div class=container4>
+        <p id="par">У мамы 2 яблока и 3 груши. Каждый день в течение 5 дней подряд она выдает по одному фрукту. Сколькими способами это может быть сделано?
+      </div>
+      <script>
+          "use strict"
+          
+          function randomInteger(min, max) {
+          let rand = min + Math.random() * (max - min);
+          return Math.round(rand);
+        }
+
+        let a = randomInteger(1, 100);
+        let b = randomInteger(1, 100);
+
+          let exp1 = 'У мамы $q1 яблока и $q2 груши. Каждый день в течение $d дней подряд она выдает по одному фрукту. Сколькими способами это может быть сделано?';
+          var element = document.getElementById("par");
+          //element.innerHTML = "New Heading";
+
+          exp1 = exp1.replace("$q1", String(a));
+          exp1 = exp1.replace("$q2", String(b));
+          exp1 = exp1.replace("$d", String(randomInteger(1, 10)));
+
+          element.innerHTML = exp1;
+          console.log(exp1);
+
+
+          let str = "тест еще тест"
+          console.log(str.replace("тест","прошел")  + 'test'); // = "прошел еще тест"
+          console.log(str);
+
+      </script>
+</body>
+</html>
